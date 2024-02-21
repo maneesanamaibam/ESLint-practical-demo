@@ -72,3 +72,68 @@ async function foo(things) {
 //   // Now that all the asynchronous operations are running, here we wait until they all complete.
 //   return baz(await Promise.all(results));
 // }
+
+
+// 7.  prefer-nullish-coalescing
+//bad code
+let foo: string = 'bar';
+foo =foo === undefined || foo === null ? 'a string' : foo;
+console.log(foo, 'foo');
+
+ 
+//good code
+
+let foo: string = 'bar';
+foo = foo === undefined ?? foo === null ? 'a string' : foo;
+console.log(foo, 'foo');
+
+  
+//8. no-array-delete
+//bad code
+ 
+const arr: number[] = [1, 2, 3, 4];
+    delete arr[0];
+
+  
+ 
+//good code
+
+const arr: number[] = [1, 2, 3, 4];
+arr.splice(0, 1);
+
+  
+
+//9. consistent-type-definitions
+
+//bad code
+
+type T = { x: number };
+//good code 
+interface T {
+
+  x: number;
+
+}
+
+// 10. no-unnecessary-boolean-literal-compare
+//bad code 
+const condition: boolean = true;
+    if (condition == true) {
+
+      console.log(condition);
+
+    }
+
+  }
+ 
+//good code
+ 
+const condition: boolean = true;
+
+    if (condition) {
+
+      console.log(condition);
+
+    }
+
+  
