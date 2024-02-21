@@ -1,0 +1,15 @@
+{
+  "name": "eslint-and-prettier",
+  "version": "1.0.0",
+  "description": "ESlint and prettier conflict demo",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "eslint"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.22.0"
+  }
+}
