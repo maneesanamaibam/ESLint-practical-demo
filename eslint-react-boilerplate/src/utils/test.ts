@@ -137,3 +137,8 @@ const condition: boolean = true;
     }
 
   
+// FIXABLE
+//     // BAD CODE
+// const arr: Array<number> = [1, 2, 3];
+// // GOOD CODE
+// const arr: number[] = [1, 2, 3];
