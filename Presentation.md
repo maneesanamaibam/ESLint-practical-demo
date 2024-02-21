@@ -108,8 +108,101 @@ async function foo(things) {
 //   return baz(await Promise.all(results));
 // }
 
-// 7.  prefer-nullish-coalescing
 // 8.  no-array-delete
 // 9.  consistent-type-definitions
 // 10. no-unnecessary-boolean-literal-compare
+
+
+
+
+
+// 7.  prefer-nullish-coalescing
+//bad code
+const foo: string = 'bar';
+
+  func() {
+
+    this.foo =
+
+      this.foo === undefined || this.foo === null ? 'a string' : this.foo;
+
+    console.log(this.foo, 'foo');
+
+  }
+ 
+//good code
+
+foo?: string = 'bar';
+
+  func() {
+
+    this.foo =
+
+      this.foo === undefined ?? this.foo === null ? 'a string' : this.foo;
+
+    console.log(this.foo, 'foo');
+
+  }
+//8. no-array-delete
+//bad code
+ 
+const arr: number[] = [1, 2, 3, 4];
+ 
+  func() {
+
+    delete this.arr[0];
+
+  }
+ 
+//good code
+
+const arr: number[] = [1, 2, 3, 4];
+ 
+  function func() {
+
+arr.splice(0, 1);
+
+  }
+
+//9. consistent-type-definitions
+
+//bad code
+
+type T = { x: number };
+//good code 
+interface T {
+
+  x: number;
+
+}
+
+//no-unnecessary-boolean-literal-compare
+//bad code 
+
+const condition: boolean = true;
+
+  function func() {
+
+    if (this.condition == true) {
+
+      console.log(this.condition);
+
+    }
+
+  }
+ 
+//good code
+ 
+const condition: boolean = true;
+
+  function func() {
+
+    if (this.condition) {
+
+      console.log(this.condition);
+
+    }
+
+  }
+ 
 ```
