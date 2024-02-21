@@ -1,0 +1,17 @@
+{
+    "env":{
+        "browser":true,
+        "es6":true,
+        "node": true
+    },
+    "extends":[
+        // "eslint:recommended",
+        "eslint:all",
+        
+    ],
+    "rules": {
+"strict":"off",
+"no-unused-vars": "off",
+
+    }
+}
